@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nixfox | shorten your URLs and links in style</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    @*<header id="main-header">*@
+    <section>
+        @*<h1>nixfox.de</h1>*@
+        <h2>a super light and friendly url shortener</h2>
+    </section>
+    @*</header>*@
+    <section id="main-wrapper">
+        @*@RenderBody()*@
+        <div class="shortener-form-wrap">
+            <section class="shortener-form">
+                <h2>Enter your link below and get it shortened, nice and easy.</h2>
+                @if (ViewBag.sUrl != "")
+                {
+                    <h2>@ViewBag.sUrl</h2>
+                }
+                @using (Html.BeginForm("ShortenUrl", "Home", FormMethod.Post))
+                {
+                    <div class="input-wrap">
+                        <input type="text" name="longUrl" id="longUrl" placeholder="Shorten your URL" width="500" /><input type="submit" id="submit" value="Shorten" />@*<button id="submit">Shorten</button>*@
+                    </div>
+                }
+
+                <div class="resp-area inactive" id="resp-area">
+
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>

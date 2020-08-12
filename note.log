@@ -1,0 +1,5 @@
+- The system was implemented using c#.Net
+- The database script file "Script.sql" should be run in SQL Server environment or restore the backup file "UrlShortener.bak" to generate the database
+- Change the server name in the web.config file to the appropriate SQL server instance
+- Run the application on IIS server
+- Enter a long URL in the text field and click on "Shorten" button on the front page to get the shortened URL 
